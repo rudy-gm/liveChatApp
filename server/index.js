@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const cors = require('cors');
-const {Server} = require('socket.io')
+const {Server} = require('socket.io');
+require('dotenv').config(); 
 
 app.use(cors());
 
@@ -35,7 +36,7 @@ io.on("connection", (socket)=>{
     
 });
 
-server.listen(3001, ()=>{
+server.listen( process.env.PORT || 3001, ()=>{
     console.log('server running')
 });
 
