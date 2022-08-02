@@ -12,7 +12,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
 
     cors:{
-        origin: "https://rudy-chatapp-backend.herokuapp.com/",
+        origin: "https://rudy-livechatapp.netlify.app/",
         methods:["GET","POST"]
     }
 });
