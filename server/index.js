@@ -5,6 +5,9 @@ const cors = require('cors');
 const {Server} = require('socket.io');
 require('dotenv').config(); 
 
+const PORT = process.env.PORT;
+const Domains  = ["https://rudy-chatapp.netlify.app", "https://rudy-chatapp.netlify.app/"]
+
 app.use(cors());
 
 const server = http.createServer(app);
@@ -12,7 +15,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
 
     cors:{
-        origin: "https://rudy-livechatapp.netlify.app/",
+        origin: Domains,
         methods:["GET","POST"]
     }
 });
@@ -36,7 +39,7 @@ io.on("connection", (socket)=>{
     
 });
 
-server.listen( process.env.PORT || 3001, ()=>{
-    console.log('server running')
+server.listen( PORT || 8080, ()=>{
+    console.log(`Server running on port: ${PORT}`)
 });
 

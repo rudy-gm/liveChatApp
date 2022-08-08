@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
 
-const socket = io.connect("https://rudy-livechatapp-backend.netlify.app/");
+const socket = io.connect("https://rudy-chatapp.herokuapp.com/");
 
 function App() {
   const [username, setUsername] = useState("");
